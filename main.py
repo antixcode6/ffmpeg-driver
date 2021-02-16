@@ -40,7 +40,7 @@ def main():
         mp3extensions.append(songmp3)
 
     if args.simulate:
-        width = len(onlyfiles[0])*2
+        width = len(onlyfiles[0]) * 2
         print("Changes that would have occured\n")
         for idx, song in enumerate(onlyfiles):
             imp = onlyfiles[idx]
@@ -50,7 +50,13 @@ def main():
     else:
         for idx, song in enumerate(onlyfiles):
             ffmpeg_driver = subprocess.Popen(
-                ["ffmpeg", "-i", f"{musicdir}/{onlyfiles[idx]}", f"{musicdir}/{mp3extensions[idx]}"], stdout=subprocess.PIPE
+                [
+                    "ffmpeg",
+                    "-i",
+                    f"{musicdir}/{onlyfiles[idx]}",
+                    f"{musicdir}/{mp3extensions[idx]}",
+                ],
+                stdout=subprocess.PIPE,
             )
             ffmpeg_driver.stdout.close()
             ffmpeg_driver.wait()
