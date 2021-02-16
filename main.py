@@ -16,7 +16,7 @@ def main():
     for song in onlyfiles:
         result = regex.search(song)
         songs.append(result.group(0))
-    #ffmpeg_driver = subprocess.onlyfiles(["ffmpeg", "-i", f"{song}.mp3"], stdout=subprocess.PIPE)
+        
     mp3extensions = []
     for song in songs:
         songmp3 = f"{song}mp3"
@@ -28,9 +28,6 @@ def main():
         ffmpeg_driver = subprocess.Popen(["ffmpeg", "-i", onlyfiles[idx], mp3extensions[idx]], stdout=subprocess.PIPE)
         ffmpeg_driver.stdout.close()
         ffmpeg_driver.wait()
-
-#    for newsong in newlist:
- #       print(newsong)
 
 
 
