@@ -34,12 +34,17 @@ def main():
     for song in onlyfiles:
         result = regex.search(song)
         songs.append(result.group(0))
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 82d630a1700ddf9afef543416857c2d60c93cfb1
     mp3extensions = []
     for song in songs:
         songmp3 = f"{song}mp3"
         mp3extensions.append(songmp3)
 
+<<<<<<< HEAD
     if args.simulate:
         width = len(onlyfiles[0])*2
         print("Changes that would have occured\n")
@@ -55,6 +60,15 @@ def main():
             )
             ffmpeg_driver.stdout.close()
             ffmpeg_driver.wait()
+=======
+    for idx, song in enumerate(onlyfiles):
+        imp = onlyfiles[idx]
+        output = mp3extensions[idx]
+        ffmpeg_driver = subprocess.Popen(["ffmpeg", "-i", onlyfiles[idx], mp3extensions[idx]], stdout=subprocess.PIPE)
+        ffmpeg_driver.stdout.close()
+        ffmpeg_driver.wait()
+
+>>>>>>> 82d630a1700ddf9afef543416857c2d60c93cfb1
 
 
 if __name__ is main():
