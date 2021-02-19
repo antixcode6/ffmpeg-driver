@@ -17,7 +17,14 @@ Drop the main.py file into the directory you wish to convert and run it, simple 
 cd ~/Music/Alternative
 git clone https://github.com/antixcode6/ffmpeg-driver.git
 cd ffmpeg-driver
-python3 main.py -p [path] -S [simulate]
+
+usage: ffmpy.py [-h] [-p PATH] [-S] [-f]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The directory you want to exec this command on
+  -S, --simulate        Run it without really running it
+  -f, --force           This causes the program to be forced i.e. ffmpeg will not ask to overwrite files
 ```
 
 ```
